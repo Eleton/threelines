@@ -1,0 +1,100 @@
+<html>
+<head>
+  <title>Tre Repliker</title>
+  <meta charset="utf8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <style type="text/css">
+  body{
+    background-color: black;
+    color: ivory;
+  }
+  form{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 80vh;
+  }
+  .xCenter{
+    display: flex;
+    justify-content: center;
+  }
+  details{
+    font-size: 2em;
+  }
+  h1{
+    font-size: 4em;
+  }
+  .lineInput{
+    width: 80vw;
+    font-size: 6em;
+    background-color: ivory;
+    border-color: rgba(0,0,0,0);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+  }
+  h3{
+    font-size: 2em;
+  }
+  .lineSubmit{
+    display: flex;
+    justify-content: center;
+  }
+  .lineSubmit input{
+    background-color: ivory;
+    width: 20vw;
+    font-size: 3em;
+    border-radius: 100px;
+    margin-top: 10vh;
+  }
+  .material-icons{
+    color: ivory;
+    font-size: 2.5em;
+  }
+  .back-button{
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+    padding-top: 4px;
+    border-radius: 100px;
+    border: 2px solid ivory;
+    font-size: 1.8em;
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+    text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+  <form action="/suggest" method="post" onsubmit="setTimeout(function(){window.location.reload();},200)">
+    <div class="xCenter">
+    <!--<details>
+      <summary class="xCenter">
+        Skriv en replik
+      </summary>
+      <p>Repliken kommer sen finnas tillgänglig för skådespelarna i övningen.</p>
+    </details>-->
+    <h1>Skriv en replik!</h1>
+    </div>
+    <div class="xCenter">
+      <input class="lineInput" id="lineInput" name="suggestion">
+    </div>
+    <!--<h3 class="xCenter">Repliken kommer sen finnas tillgänglig<br> för skådespelarna i övningen</h3>-->
+    <div class="lineSubmit">
+      <input type="submit" id="submitForm" value="Klart!">
+    </div>
+    <a class="back-button" href="#">
+      <i class="material-icons">keyboard_arrow_left</i>
+    </a>
+  </form>
+  <script>
+  document.getElementById("submitForm").onclick = function(){
+    console.log("reload1")
+    //location.reload();
+    console.log("reload2")
+  }
+  </script>
+</body>
+</html>

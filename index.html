@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Tre Repliker</title>
+  <meta charset="utf8">
+  <style type="text/css">
+  body{
+    font-size: 3.5em;
+    color: ivory;
+    background-color: #010101;
+  }
+  p{
+    font-size: 1.5em;
+  }
+  a{
+    color: #0C5EB8;
+  }
+  </style>
+</head>
+<body>
+  <h1>Välkommen till Tre Repliker-appen!</h1>
+  <p>Åskådare uppmanas bidra med <wbr><a href="suggest_line">roliga repliker</a>.</p>
+  <p>Deltagare förväntas <a href="draw_lines">hämta repliker</a> för att kunna delta i leken.</p>
+  <p><a id="reset" href="/">Tryck här</a> för att nollställa din deltagaromgång.</p>
+  <script>
+  document.getElementById("reset").onclick = function(){
+    localStorage.clear();
+  }
+  </script>
+</body>
+</html>

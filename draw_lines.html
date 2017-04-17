@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>Tre Repliker</title>
+  <style type="text/css">
+  body{
+    margin: 0;
+    background-color: #010101;
+    color: ivory;
+  }
+  section{
+    height: calc(100% / 3);
+    border-bottom: 1px ivory solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  section div{
+    font-size: 4em;
+    text-align: center;
+    opacity: 0.3;
+  }
+  .selected{
+    opacity: 1;
+  }
+
+  </style>
+</head>
+<body>
+  <section>
+    <div id="one" class="line">?</div>
+  </section>
+  <section>
+    <div id="two" class="line">?</div>
+  </section>
+  <section>
+    <div id="three" class="line">?</div>
+  </section>
+
+  <script>
+  var response = {};
+  window.onload = function(){
+    var res = localStorage.getItem("response");
+    if(res === null){
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          rawResponse = this.responseText;
+          response = JSON.parse(rawResponse);
+          console.log(response)
+          localStorage.setItem("response", rawResponse);
+          
+        }
+      };
+      xhttp.open("GET", "lines", true);
+      xhttp.send();
+    }else{
+      response = JSON.parse(res);
+    }
+  }
+  var lines = document.getElementsByTagName("section");
+  for (l of lines){
+    l.onclick = function() {
+      for (l2 of lines){
+        l2.getElementsByTagName("div")[0].classList.remove("selected");
+      }
+      var sel = this.getElementsByTagName("div")[0];
+      sel.classList.add("selected");
+      sel.innerText = response[sel.id];
+    }
+  }
+  </script>
+</body>
+</html>

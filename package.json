@@ -1,0 +1,19 @@
+{
+  "name": "threelines",
+  "version": "1.0.0",
+  "description": "Mobile web application intended for use in an improv theatre exercise.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Improv"
+  ],
+  "author": "Aiman Josefsson",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "material-design-icons": "^3.0.1"
+  }
+}
